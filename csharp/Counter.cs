@@ -1,8 +1,25 @@
-class Counter {
-    private Int32 count = 0;
+public interface Counter {
+    uint Count { get; }
+    void Increment();
+}
+
+class UnlockedCounter : Counter
+{
+    private uint count = 0;
+
+    public uint Count => count;
+
+    public void Increment()
+    {
+        count += 1;
+    }
+}
+
+class LockedCounter : Counter {
+    private uint count = 0;
     private Object _lock = new Object();
 
-    public int Count {
+    public uint Count {
         get { 
             // Since the CLR guarantees 32-bit atomicity,
             // this is probably unnecessary but their documentation
@@ -20,4 +37,12 @@ class Counter {
             count += 1;
         }
     }
+}
+
+class InterlockedCounter : Counter {
+    private uint count = 0;
+
+    public uint Count => count;
+
+    public void Increment() { Interlocked.Increment(ref count); }
 }

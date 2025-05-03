@@ -2,12 +2,9 @@ using System.Collections.Generic;
 using System.Threading;
 
 public class RawThreads {
-    public static void Go() {
+    public static void Go(Counter c) {
         const int THREADS = 100;
         const int INCS_PER_THREAD = 1000;
-
-        Counter c = new Counter();
-        Console.WriteLine("Counter is {0}", c.Count);
 
         List<Thread> threads = new List<Thread>();
         for (int i=0; i<THREADS; i++) {
@@ -24,7 +21,5 @@ public class RawThreads {
         foreach (var thread in threads) {
             thread.Join();
         }
-
-        Console.WriteLine("Counter is {0}", c.Count);
     }
 }

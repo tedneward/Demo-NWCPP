@@ -1,10 +1,7 @@
 public class ThreadPooling {
-    public static void Go() {
+    public static void Go(Counter c) {
         const int THREADS = 100;
         const int INCS_PER_THREAD = 1000;
-
-        Counter c = new Counter();
-        Console.WriteLine("Counter is {0}", c.Count);
 
         // We need a "done" signal that each thread will flip
         // when it is done counting
@@ -20,7 +17,5 @@ public class ThreadPooling {
 
         // Wait for the queued work to all finish
         signal.Wait();
-
-        Console.WriteLine("Counter is {0}", c.Count);
     }
 }

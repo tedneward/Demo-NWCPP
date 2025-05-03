@@ -1,6 +1,8 @@
 # C# Example
 This directory contains examples of how to launch 100 threads, each of which increments a shared integer value by 1 in a loop that runs 1000 times. 
 
+Note that C# here is simply a preferential choice; we could have used F# or even Visual Basic to write any of these, with a change only to syntax. (That is to say, there would be little to no change in semantics.)
+
 ## QuickStart
 Assuming you have `dotnet` installed on your machine, you can drop into this directory and run the program with `dotnet run`.
 
@@ -83,8 +85,9 @@ More idiomatically (of C# 1.0, anyway) is the use of the build-in "thread pool" 
 
 Because the threads in the thread pool are all background threads by nature, they will not keep the CLR alive on their own, so we `Wait` on a signal for each thread to `Signal` when they are finished with their loop.
 
-Note that C# here is simply a preferential choice; we could have used F# or even Visual Basic to write any of these, with a change only to syntax. (That is to say, there would be little to no change in semantics.)
-
 ### ExplicitTasks
-This uses the Task-based Asynchronous Programming (TAP) approach in C#, exemplified by the `Task` type, to abstract away the threading behavior entirely.
+This uses the Task-based Asynchronous Programming (TAP) approach in C#, exemplified by the `Task` type, to abstract away the threading behavior entirely. Although it's not strictly necessary, TAP usually brings in the use of the C# `async` and `await` keywords, which help make it easier to invoke these to run in parallel (even though it doesn't make a whole lot of sense in this simple example).
+
+### ImplicitTasks
+We can also do some "abstract away the Tasks" by using some of the `Parallel` methods.
 
