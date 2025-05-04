@@ -1,7 +1,7 @@
-# Demo-NWCPP
-Some demos for NW C++ Users Group
+# C++ Example
+This directory contains the original C++ code that all the other languages are comparing against.
 
-The original C++ code used is this:
+The code is repeated here for reference.
 
 ```
 // Can be run at: https://www.onlinegdb.com/ using C++ 23 Language option
@@ -65,25 +65,3 @@ int main() {
     return 0;
 }
 ```
-
-## cpp
-I attempted to get the C++ code to compile on my machine; unfortunately, the latest version of GCC I have on my machine (g++ (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0) doesn't seem to support the `<print>` header or `std::println` functionality, so I had to make a few adjustments in this directory to compile and run the C++ version.
-
-## csharp
-This project was created via a `dotnet new console`. You can download all the dependencies for the project by `dotnet restore`, then run the project via `dotnet run`. Two subdirectories will be created, `bin` and `obj`; the compiled binaries will be in `bin`, but are typically not executed directly. (Technically the dotnet CLI will create DLLs, not EXEs, so they're not directly executable--one uses the `dotnet` command to load and run them, just as Java uses `java` to do the same.)
-
-## mojo
-This project was created via `magic init --format mojoproject`. That in turn created a hidden `.magic` directory that contains the "environment" for the project. This is updated/downloaded via `magic update`, which downloads and installs a LOT of stuff.
-
-Run the sample code by *either*:
-
-* Dropping into a "magic shell" by running:
-
-    * `magic shell` (which will actually download some stuff on first run)
-    * `mojo sample.mojo`
-    * `exit` (to exit the shell)
-
-* Or by running:
-
-    * `magic run mojo sample.mojo`
-
