@@ -1,6 +1,3 @@
-using System.Collections.Generic;
-using System.Threading;
-
 public class RawThreads {
     public static void Go(Counter c) {
         const int THREADS = 100;
