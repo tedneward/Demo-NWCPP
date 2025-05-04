@@ -69,6 +69,8 @@ int main() {
 ## cpp
 I attempted to get the C++ code to compile on my machine; unfortunately, the latest version of GCC I have on my machine (g++ (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0) doesn't seem to support the `<print>` header or `std::println` functionality, so I had to make a few adjustments in this directory to compile and run the C++ version.
 
+This project makes use of the world's simplest Makefile, which has three targets: "run", which builds "sample"; "sample", which compiles `sample.cpp`; and "clean`, which deletes the compiled executable. I maybe could've used CMake or some other tools, but hey, simplest possible thing, yeah?
+
 ## csharp
 This project was created via a `dotnet new console`. You can download all the dependencies for the project by `dotnet restore`, then run the project via `dotnet run`. Two subdirectories will be created, `bin` and `obj`; the compiled binaries will be in `bin`, but are typically not executed directly. (Technically the dotnet CLI will create DLLs, not EXEs, so they're not directly executable--one uses the `dotnet` command to load and run them, just as Java uses `java` to do the same.)
 

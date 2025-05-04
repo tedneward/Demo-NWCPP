@@ -4,6 +4,8 @@ This directory contains examples of how to launch 100 threads, each of which inc
 Note that C# here is simply a preferential choice; we could have used F# or even Visual Basic to write any of these, with a change only to syntax. (That is to say, there would be little to no change in semantics.)
 
 ## QuickStart
+This project was created via a `dotnet new console`. You can download all the dependencies for the project by `dotnet restore`, then run the project via `dotnet run`. Two subdirectories will be created, `bin` and `obj`; the compiled binaries will be in `bin`, but are typically not executed directly. (Technically the dotnet CLI will create DLLs, not EXEs, so they're not directly executable--one uses the `dotnet` command to load and run them, just as Java uses `java` to do the same.)
+
 Assuming you have `dotnet` installed on your machine, you can drop into this directory and run the program with `dotnet run`.
 
 ## Explanation
